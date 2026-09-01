@@ -1,0 +1,48 @@
+{
+  "source_id": "qaamuus-dugsiyeed-af-soomaaliga-2022",
+  "source_type": "external_dictionary_reference",
+  "source_title": "Qaamuus Dugsiyeedka Af Soomaaliga (Iyo Naxwaha Af Soomaaliga oo Kooban)",
+  "authors": [
+    "Cabdalla Cumar Mansuur",
+    "Annarita Puglielli"
+  ],
+  "publisher": "Edizioni Efesto",
+  "year": 2022,
+  "isbn": "978-88-3381-333-2",
+  "languages": [
+    "Somali"
+  ],
+  "reference_copy": {
+    "format": "user-provided structured JSON",
+    "reported_source_page_count": 562,
+    "reported_extracted_entry_count": 15381,
+    "transformation_note": "A cleaned/structured JSON reference copy was created for Sahal research. The extraction and entry boundaries have not been fully human-reviewed."
+  },
+  "rights": {
+    "status": "restricted",
+    "source_notice": "The source states that copyright is reserved and that reproduction or translation requires written permission from the authors.",
+    "sahal_open_license_applies": false,
+    "redistribution_approved": false,
+    "training_approved": false,
+    "validation_approved": false,
+    "evaluation_approved": false
+  },
+  "sahal_usage": {
+    "status": "reference_only",
+    "allowed_now": [
+      "manual linguistic reference",
+      "provenance-backed evidence lookup"
+    ],
+    "not_approved_now": [
+      "publishing the full extracted dictionary",
+      "placing the full extract in Sahal training data",
+      "placing the full extract in Sahal validation data",
+      "placing the full extract in Sahal frozen evaluation data"
+    ],
+    "promotion_rule": "A linguistic fact may be added to a reviewed SahalDataset record only after review, with provenance retained, and without assuming that copied source expression is freely licensed."
+  },
+  "quality": {
+    "extract_status": "unreviewed_machine_structure",
+    "known_risk": "Some parsed entries may contain line-splitting or entry-boundary errors. Do not treat extracted fields as ground truth without checking the source context."
+  }
+}
