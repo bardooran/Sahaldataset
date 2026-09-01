@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/bardooran/Sahaldataset/blob/main/reviewed/evidence_record.schema.json",
+  "title": "SahalDataset Reviewed Evidence Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_id",
+    "language",
+    "subject",
+    "claim_type",
+    "claim",
+    "evidence",
+    "review",
+    "usage"
+  ],
+  "properties": {
+    "record_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable project identifier for this reviewed judgment."
+    },
+    "language": {
+      "const": "so",
+      "description": "ISO 639-1 code for Somali."
+    },
+    "subject": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The Somali form, construction, or phenomenon being reviewed."
+    },
+    "claim_type": {
+      "type": "string",
+      "enum": [
+        "spelling",
+        "part_of_speech",
+        "noun_gender",
+        "meaning",
+        "morphology",
+        "usage",
+        "grammar",
+        "language_status",
+        "other"
+      ]
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value"],
+      "properties": {
+        "value": {},
+        "note": {
+          "type": "string"
+        }
+      },
+      "description": "The exact judgment being recorded. Use note for scope or uncertainty."
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["provenance_id", "locator"],
+        "properties": {
+          "provenance_id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Identifier of a record under provenance/."
+          },
+          "locator": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Page, entry, line, section, URL fragment, or other precise locator."
+          },
+          "evidence_note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "method"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["approved", "uncertain", "rejected"]
+        },
+        "method": {
+          "type": "string",
+          "enum": ["native_speaker", "source_review", "native_speaker_and_source_review"]
+        },
+        "reviewer": {
+          "type": "string",
+          "description": "Reviewer name or stable reviewer identifier when appropriate."
+        },
+        "reviewed_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "usage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["development", "training", "validation", "evaluation"],
+      "properties": {
+        "development": {"type": "boolean"},
+        "training": {"type": "boolean"},
+        "validation": {"type": "boolean"},
+        "evaluation": {"type": "boolean"}
+      },
+      "description": "Explicit split permissions. Evaluation records must not be silently reused for development or training."
+    }
+  }
+}
