@@ -21,3 +21,7 @@ A reviewed record may be `approved`, `uncertain`, or `rejected`. Uncertainty is 
 A review example can be used for development only if its usage fields permit that use. Do not silently move frozen evaluation answers into training or development.
 
 Do not create empty topic folders in advance. Add a reviewed collection only when real reviewed records are ready for it.
+
+## Current reviewed collection
+
+`lexicon_core_v1.jsonl` starts the reviewed lexical evidence set with small factual judgments supported by precise source locators. It currently contains only cross-source noun-gender facts and does not copy dictionary definitions. Its records are approved for Sahal development use only; they are not marked for model training, validation, or frozen evaluation.
