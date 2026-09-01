@@ -1,0 +1,44 @@
+name: Dataset checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check required foundation files
+        run: |
+          test -f README.md
+          test -f docs/DATA_POLICY.md
+          test -f reviewed/README.md
+          test -f corpus/README.md
+          test -f training/README.md
+          test -f validation/README.md
+          test -f evaluation/README.md
+          test -f provenance/README.md
+
+      - name: Validate JSON and JSONL syntax
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          for path in Path('.').rglob('*.json'):
+              with path.open(encoding='utf-8') as handle:
+                  json.load(handle)
+
+          for path in Path('.').rglob('*.jsonl'):
+              with path.open(encoding='utf-8') as handle:
+                  for line_number, line in enumerate(handle, start=1):
+                      if line.strip():
+                          try:
+                              json.loads(line)
+                          except json.JSONDecodeError as exc:
+                              raise SystemExit(f'{path}:{line_number}: {exc}') from exc
+          PY
