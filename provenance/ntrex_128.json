@@ -1,0 +1,46 @@
+{
+  "dataset_id": "ntrex-128",
+  "dataset_name": "NTREX-128",
+  "upstream_repository": "MicrosoftTranslator/NTREX",
+  "upstream_commit": "468c6b69c7f6a75d31d4743d9daba2af566cc18d",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "upstream_homepage": "https://github.com/MicrosoftTranslator/NTREX",
+  "citation": {
+    "title": "NTREX-128 -- News Test References for MT Evaluation of 128 Languages",
+    "authors": [
+      "Christian Federmann",
+      "Tom Kocmi",
+      "Ying Xin"
+    ],
+    "year": 2022
+  },
+  "benchmark_files": {
+    "som": "NTREX-128/newstest2019-ref.som.txt",
+    "eng": "NTREX-128/newstest2019-src.eng.txt",
+    "swe": "NTREX-128/newstest2019-ref.swe.txt"
+  },
+  "selected_lines": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    501,
+    502,
+    503,
+    504,
+    505,
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    1501,
+    1502,
+    1503,
+    1504,
+    1505
+  ],
+  "selection_note": "The same fixed line positions were selected for all three languages before SahalNLP was measured."
+}
