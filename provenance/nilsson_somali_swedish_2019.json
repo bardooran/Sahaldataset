@@ -1,0 +1,51 @@
+{
+  "source_id": "nilsson-kort-somalisk-svensk-ordlista-2019-v0.19",
+  "source_type": "external_bilingual_dictionary_reference",
+  "source_title": "Kort somalisk-svensk ordlista",
+  "author": "Morgan Nilsson",
+  "version": "0.19",
+  "source_date": "2019-04-08",
+  "languages": [
+    "Somali",
+    "Swedish"
+  ],
+  "reference_copy": {
+    "format": "user-provided structured JSON",
+    "reported_source_page_count": 183,
+    "source_foreword_reported_headword_count": 8800,
+    "reported_extracted_entry_count": 5763,
+    "transformation_note": "A cleaned/structured JSON reference copy was created for Sahal research. The extracted entry count differs from the source foreword headword count, and the extraction has not been fully human-reviewed."
+  },
+  "source_notes": {
+    "work_status": "ongoing_work",
+    "author_caution": "The source foreword says some information may be incomplete or incorrect and should be read critically."
+  },
+  "rights": {
+    "status": "unknown_from_provided_material",
+    "license": "unknown",
+    "sahal_open_license_applies": false,
+    "redistribution_approved": false,
+    "training_approved": false,
+    "validation_approved": false,
+    "evaluation_approved": false,
+    "review_note": "Do not assign a Sahal license or redistribute the extracted dictionary until the upstream terms are verified."
+  },
+  "sahal_usage": {
+    "status": "reference_only_pending_rights_review",
+    "allowed_now": [
+      "manual linguistic reference",
+      "provenance-backed evidence lookup"
+    ],
+    "not_approved_now": [
+      "publishing the full extracted dictionary",
+      "placing the full extract in Sahal training data",
+      "placing the full extract in Sahal validation data",
+      "placing the full extract in Sahal frozen evaluation data"
+    ],
+    "promotion_rule": "A linguistic fact may be added to a reviewed SahalDataset record only after review, with provenance retained, and without assuming that copied source expression is freely licensed."
+  },
+  "quality": {
+    "extract_status": "unreviewed_machine_structure",
+    "known_risk": "The structured copy contains apparent line-splitting and entry-boundary errors. Verify individual entries against source context before using them as evidence."
+  }
+}
